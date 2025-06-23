@@ -2,6 +2,7 @@ import telebot
 from telebot import types
 import config
 
+id = config.id
 bot = telebot.TeleBot(config.token)
 
 btn1 = types.KeyboardButton(text='жалоба')
@@ -40,7 +41,7 @@ def send_text(message):
                          f'{message.from_user.username} {message.from_user.first_name} {message.from_user.last_name} отпровляет вопрос к руководству...')
 
     else:
-        bot.send_message(config.id,f'{message.from_user.username} {message.from_user.first_name} {message.from_user.last_name}:{message.text}')
+        bot.send_message(id,f'{message.from_user.username} {message.from_user.first_name} {message.from_user.last_name}:{message.text}')
         print(f'{message.from_user.username} {message.from_user.first_name} {message.from_user.last_name}:{message.text}')
 
 
